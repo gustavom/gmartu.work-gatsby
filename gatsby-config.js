@@ -63,6 +63,14 @@ module.exports = {
         // https://www.npmjs.com/package/micromatch#matching-features
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/projetos/`,
+        name: `projetos`,
+      },
+    },
+    `gatsby-transformer-remark`,
     // ,
     // `gatsby-plugin-offline`,
   ],
