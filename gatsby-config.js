@@ -44,16 +44,26 @@ module.exports = {
         displayName: process.env.NODE_ENV !== "production",
       },
     },
+
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          {
-            family: `IBM Plex Sans`,
-            subsets: [`400`, `500`, `600`, `700`],
-          },
+          `IBM Plex Sans pro\:400,500,600,700`, // you can also specify font weights and styles
         ],
+        display: "swap",
       },
-    }`gatsby-plugin-offline`,
+    },
+    {
+      resolve: `gatsby-plugin-page-creator`,
+      options: {
+        path: `${__dirname}/src/pages`,
+        ignore: [`**/styles.js`],
+        // See pattern syntax recognized by micromatch
+        // https://www.npmjs.com/package/micromatch#matching-features
+      },
+    },
+    // ,
+    // `gatsby-plugin-offline`,
   ],
 }
