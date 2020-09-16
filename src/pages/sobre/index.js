@@ -1,8 +1,10 @@
 import React from "react"
 
+import { Container } from "./styles"
+
 export default function Sobre() {
   return (
-    <div>
+    <Container>
       Olá, me chamo Gustavo Martusewicz e trabalho atualmente como desenvolvedor
       front-end.
       <br />
@@ -23,6 +25,6 @@ export default function Sobre() {
       Sinta-se livre para navegar, olhar e avaliar!
       <br />
       Obrigado!
-    </div>
+    </Container>
   )
 }

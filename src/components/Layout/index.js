@@ -1,9 +1,16 @@
 import React from "react"
 
-// import { Container } from './styles';
+import { Main } from "./styles"
+
+import Header from "../Header"
 
 function Layout({ children }) {
-  return <article>{children} </article>
+  return (
+    <Main>
+      <Header />
+      {children}
+    </Main>
+  )
 }
 
 export default Layout
