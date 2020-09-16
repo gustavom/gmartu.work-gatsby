@@ -49,7 +49,7 @@ module.exports = {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          `IBM Plex Sans pro\:400,500,600,700`, // you can also specify font weights and styles
+          `IBM Plex Sans\:400,500,600,700`, // you can also specify font weights and styles
         ],
         display: "swap",
       },
@@ -61,6 +61,13 @@ module.exports = {
         ignore: [`**/styles.js`],
         // See pattern syntax recognized by micromatch
         // https://www.npmjs.com/package/micromatch#matching-features
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/blog/`,
+        name: `blog`,
       },
     },
     {

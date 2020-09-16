@@ -16,7 +16,7 @@ tags:
   - friendly
   - portfolio
 categories:
-  - Portfolio
+  - Projetos
 ---
 
 Lorem lorem lorem
