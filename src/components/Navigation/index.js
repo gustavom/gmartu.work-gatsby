@@ -6,8 +6,12 @@ function Navigation() {
   return (
     <Container>
       <ul>
-        <li>gmartu</li>
-        <li>projeto</li>
+        <li>
+          <Link to="/">gmartu</Link>
+        </li>
+        <li>
+          <Link to="/projetos">projetos</Link>
+        </li>
         <li>
           <Link to="/sobre">sobre</Link>
         </li>
