@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { Link, graphql } from "gatsby"
 
 import Layout from "../../components/Layout"
 import { Container } from "./styles"
@@ -12,7 +12,7 @@ function projetos({ data }) {
         <h1>Projetos</h1>
         {project.map(({ node }) => (
           <li>
-            {node.fields.slug}
+            <Link to={node.fields.slug}>{node.fields.slug}</Link>
             <br />
             {node.frontmatter.title}
             <br />
