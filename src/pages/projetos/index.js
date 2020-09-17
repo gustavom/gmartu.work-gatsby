@@ -2,7 +2,13 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 
 import Layout from "../../components/Layout"
-import { Container } from "./styles"
+import {
+  Container,
+  ProjectList,
+  ProjectItem,
+  ProjectItemImage,
+  ProjectItemTitle,
+} from "./styles"
 
 function projetos({ data }) {
   const project = data.allMarkdownRemark.edges
@@ -10,15 +16,18 @@ function projetos({ data }) {
     <Layout>
       <Container>
         <h1>Projetos</h1>
-        {project.map(({ node }) => (
-          <li>
-            <Link to={node.fields.slug}>{node.fields.slug}</Link>
-            <br />
-            {node.frontmatter.title}
-            <br />
-            <img src={node.frontmatter.image} />
-          </li>
-        ))}
+        <ProjectList>
+          {project.map(({ node }) => (
+            <ProjectItem>
+              <Link to={node.fields.slug}>
+                <ProjectItemImage>
+                  <img src={node.frontmatter.image} />
+                </ProjectItemImage>
+                <ProjectItemTitle>{node.frontmatter.title}</ProjectItemTitle>
+              </Link>
+            </ProjectItem>
+          ))}
+        </ProjectList>
       </Container>
     </Layout>
   )
