@@ -26,10 +26,11 @@ export default function Sobre() {
         </p>
         <p>
           Eu criei este site pessoal para mostrar um pouco dos projetos que
-          participei ao mundo e também para treinar (fiz um gerenciador de
-          conteúdo com NodeJs, Express, Sequelize e Postgres, se me perguntar,
-          podemos falar mais sobre isso), e essa maravilhosa lib que é o React
-          JS.
+          participei ao mundo e também para treinar (já fiz uma versão com
+          gerenciador de conteúdo com NodeJs, Express, Sequelize e Postgres e o
+          front-end feito com ReactJS, se me perguntar, podemos falar mais sobre
+          isso), e essa atual esta feita com GatsbyJS e Markdown para os
+          projetos e para talvez, um blog.
         </p>
         <p>Sinta-se livre para navegar, olhar e avaliar!</p>
         <p>Obrigado!</p>

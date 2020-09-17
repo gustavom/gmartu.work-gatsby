@@ -22,4 +22,15 @@ export default createGlobalStyle`
     font-family: "IBM Plex Sans";
     font-weight: 400;
   }
+  h1{
+    font-weight: 600;
+    font-size: 2rem;
+    padding:0 0 1rem;
+    margin:0 0 1rem;
+    border-bottom: solid 1px #222
+  }
+  p{
+    font-size: 1.2rem;
+    line-height:1.5
+  }
 `
