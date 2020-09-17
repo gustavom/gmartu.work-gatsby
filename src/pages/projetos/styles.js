@@ -23,6 +23,16 @@ export const ProjectItem = styled.article`
     text-decoration: none;
     overflow: hidden;
   }
+  @media (min-width: 900px) {
+    &:first-child {
+      grid-row: span 2;
+      grid-row: span 2 / auto;
+      img {
+        width: auto;
+        height: 200%;
+      }
+    }
+  } ;
 `
 
 export const ProjectItemImage = styled.div`
@@ -39,10 +49,16 @@ export const ProjectItemImage = styled.div`
     left: 50%;
     transform: translate(-50%, -50%);
   }
+  @media (max-width: 768px) {
+    img {
+      width: auto;
+      height: 200%;
+    }
+  }
 `
 export const ProjectItemTitle = styled.div`
   position: absolute;
-  bottom: 0;
+  top: 0;
   width: 100%;
   background-color: #000;
   color: #fff;
