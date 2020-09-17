@@ -41,7 +41,10 @@ exports.createPages = async ({ graphql, actions }) => {
   console.log(JSON.stringify(result, null, 4))
   result.data.allMarkdownRemark.edges.forEach(({ node }) => {
     console.log(node.frontmatter.categories[0])
-    if (node.frontmatter.categories[0] === "Projetos") {
+    if (
+      node.frontmatter.categories[0] === "Projetos" ||
+      node.frontmatter.categories[0] === "labs"
+    ) {
       createPage({
         path: node.fields.slug,
         component: projectPage,

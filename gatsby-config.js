@@ -77,6 +77,13 @@ module.exports = {
         name: `projetos`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/labs/`,
+        name: `labs`,
+      },
+    },
     `gatsby-transformer-remark`,
     // ,
     // `gatsby-plugin-offline`,
