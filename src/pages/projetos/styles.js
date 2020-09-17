@@ -8,6 +8,7 @@ export const ProjectList = styled.div`
   display: grid;
   gap: 0.5rem;
   grid-template-columns: 1fr 1fr 1fr;
+  grid-auto-rows: 250px;
   @media (max-width: 1100px) {
     grid-template-columns: 1fr 1fr;
     gap: 0.2rem;
@@ -26,9 +27,9 @@ export const ProjectItem = styled.article`
 
 export const ProjectItemImage = styled.div`
   width: 100%;
-  position: relative;
-  height: 0;
-  padding-bottom: 70%;
+  position: absolute;
+  height: 100%;
+  /* padding-bottom: 70%; */
   overflow: hidden;
   img {
     width: 102%;
