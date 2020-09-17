@@ -21,7 +21,10 @@ function projetos({ data }) {
             <ProjectItem>
               <Link to={node.fields.slug}>
                 <ProjectItemImage>
-                  <img src={node.frontmatter.image} />
+                  <img
+                    src={node.frontmatter.image}
+                    alt={node.frontmatter.title}
+                  />
                 </ProjectItemImage>
                 <ProjectItemTitle>{node.frontmatter.title}</ProjectItemTitle>
               </Link>
