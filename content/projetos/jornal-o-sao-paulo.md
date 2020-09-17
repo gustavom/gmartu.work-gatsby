@@ -1,5 +1,5 @@
 ---
-image: /images/project-jpuc.jpg
+image: /images/project-o-sao-paulo.jpg
 title: JORNAL O SÃO PAULO
 description: Jornal O São Paulo
 introduction: Jornal O São Paulo
