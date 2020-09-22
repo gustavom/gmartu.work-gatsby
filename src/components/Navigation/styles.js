@@ -6,7 +6,7 @@ export const Container = styled.nav`
     list-style: none;
     display: flex;
     li {
-      flex: 0 0 33.33%;
+      flex: 0 0 25%;
       padding: 1rem;
       font-size: 1.4rem;
       font-weight: 500;

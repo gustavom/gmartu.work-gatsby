@@ -8,17 +8,16 @@ import {
   ProjectItem,
   ProjectItemImage,
   ProjectItemTitle,
-} from "./styles"
+} from "../projetos/styles"
 
-function projetos({ data }) {
-  console.log(data)
-  const project = data.portfolio.edges
+function labs({ data }) {
+  const labs = data.labs.edges
   return (
     <Layout>
       <Container>
-        <h1>Projetos</h1>
+        <h1>Labs</h1>
         <ProjectList>
-          {project.map(({ node }) => (
+          {labs.map(({ node }) => (
             <ProjectItem>
               <Link to={node.fields.slug}>
                 <ProjectItemImage>
@@ -37,12 +36,12 @@ function projetos({ data }) {
   )
 }
 
-export default projetos
+export default labs
 
 export const query = graphql`
   query {
-    portfolio: allMarkdownRemark(
-      filter: { frontmatter: { categories: { eq: "Projetos" } } }
+    labs: allMarkdownRemark(
+      filter: { frontmatter: { categories: { eq: "labs" } } }
     ) {
       edges {
         node {
@@ -56,21 +55,6 @@ export const query = graphql`
         }
       }
     }
-    # labs: allMarkdownRemark(
-    #   filter: { frontmatter: { categories: { eq: "labs" } } }
-    # ) {
-    #   edges {
-    #     node {
-    #       fields {
-    #         slug
-    #       }
-    #       frontmatter {
-    #         title
-    #         image
-    #       }
-    #     }
-    #   }
-    # }
   }
 `
 
