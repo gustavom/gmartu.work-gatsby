@@ -1,5 +1,5 @@
 ---
-image: /images/project-csi-serv.jpg
+image: /images/project-puc-ex-alunos.jpg
 title: PUC-SP | EX-ALUNOS EM DESTAQUE
 description: PUC-SP | EX-ALUNOS EM DESTAQUE
 introduction: PUC-SP | EX-ALUNOS EM DESTAQUE

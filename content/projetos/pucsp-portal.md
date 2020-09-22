@@ -1,5 +1,5 @@
 ---
-image: /images/project-o-sao-paulo.jpg
+image: /images/project-portal-puc-sp.jpg
 title: PORTAL PUC-SP
 description: Portal PUC-SP
 introduction: Portal PUC-SP
