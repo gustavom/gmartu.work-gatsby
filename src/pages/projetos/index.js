@@ -11,13 +11,33 @@ import {
 } from "./styles"
 
 function projetos({ data }) {
-  const project = data.allMarkdownRemark.edges
+  console.log(data)
+  const project = data.portfolio.edges
+  const labs = data.labs.edges
   return (
     <Layout>
       <Container>
         <h1>Projetos</h1>
         <ProjectList>
           {project.map(({ node }) => (
+            <ProjectItem>
+              <Link to={node.fields.slug}>
+                <ProjectItemImage>
+                  <img
+                    src={node.frontmatter.image}
+                    alt={node.frontmatter.title}
+                  />
+                </ProjectItemImage>
+                <ProjectItemTitle>{node.frontmatter.title}</ProjectItemTitle>
+              </Link>
+            </ProjectItem>
+          ))}
+        </ProjectList>
+      </Container>
+      <Container>
+        <h1>Labs</h1>
+        <ProjectList>
+          {labs.map(({ node }) => (
             <ProjectItem>
               <Link to={node.fields.slug}>
                 <ProjectItemImage>
@@ -39,9 +59,24 @@ function projetos({ data }) {
 export default projetos
 
 export const query = graphql`
-  query IndexProjects {
-    allMarkdownRemark(
+  query {
+    portfolio: allMarkdownRemark(
       filter: { frontmatter: { categories: { eq: "Projetos" } } }
+    ) {
+      edges {
+        node {
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+            image
+          }
+        }
+      }
+    }
+    labs: allMarkdownRemark(
+      filter: { frontmatter: { categories: { eq: "labs" } } }
     ) {
       edges {
         node {
@@ -57,3 +92,23 @@ export const query = graphql`
     }
   }
 `
+
+// export const query = graphql`
+//   query IndexProjects {
+//     allMarkdownRemark(
+//       filter: { frontmatter: { categories: { eq: "Projetos" } } }
+//     ) {
+//       edges {
+//         node {
+//           fields {
+//             slug
+//           }
+//           frontmatter {
+//             title
+//             image
+//           }
+//         }
+//       }
+//     }
+//   }
+// `
