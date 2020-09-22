@@ -13,6 +13,9 @@ function Navigation() {
           <Link to="/projetos">projetos</Link>
         </li>
         <li>
+          <Link to="/labs">labs</Link>
+        </li>
+        <li>
           <Link to="/sobre">sobre</Link>
         </li>
       </ul>
