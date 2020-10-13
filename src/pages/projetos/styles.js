@@ -6,7 +6,7 @@ export const Container = styled.section`
 
 export const ProjectList = styled.div`
   display: grid;
-  gap: 0.5rem;
+  /* gap: 0.5rem; */
   grid-template-columns: 1fr 1fr 1fr;
   grid-auto-rows: 250px;
   @media (max-width: 1100px) {
