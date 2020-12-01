@@ -17,8 +17,8 @@ function labs({ data }) {
       <Container>
         <h1>Labs</h1>
         <ProjectList>
-          {labs.map(({ node }) => (
-            <ProjectItem>
+          {labs.map(({ node }, index) => (
+            <ProjectItem key={index}>
               <Link to={node.fields.slug}>
                 <ProjectItemImage>
                   <img

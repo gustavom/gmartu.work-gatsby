@@ -1,7 +1,7 @@
 import React from "react"
 // import { graphql } from "gatsby"
 import Layout from "../components/Layout"
-import { Container } from "./styles"
+import { Container, HomeContainer } from "./styles"
 
 import SEO from "../components/SEO"
 
@@ -9,7 +9,12 @@ export default function Home() {
   return (
     <Layout>
       <SEO />
-      <Container>Hello world!</Container>
+      <HomeContainer>
+        <h1>
+          Front-End
+          <span>Developer</span>
+        </h1>
+      </HomeContainer>
     </Layout>
   )
 }

@@ -19,7 +19,12 @@ export default createGlobalStyle`
   body {
     padding:0;
     font-size: 16px;
-    font-family: "IBM Plex Sans";
+    /* font-family: "IBM Plex Sans"; */
+    font-family: "Inter",sans-serif;
+    font-weight: 400;
+  }
+  input, button, textarea,select{
+    font-family: "Inter",sans-serif;
     font-weight: 400;
   }
   h1{

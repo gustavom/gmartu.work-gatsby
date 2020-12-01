@@ -9,6 +9,12 @@ module.exports = {
   siteMetadata,
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: { name: `images`, path: `${__dirname}/static/images` },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -49,7 +55,8 @@ module.exports = {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          `IBM Plex Sans\:400,500,600,700`, // you can also specify font weights and styles
+          `Inter\:400,600,700,900`, // you can also specify font weights and styles
+          // `IBM Plex Sans\:400,500,600,700`, // you can also specify font weights and styles
         ],
         display: "swap",
       },
