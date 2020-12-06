@@ -14,7 +14,7 @@ export const HomeContainer = styled.div`
     margin: 0;
     border: 0;
     font-size: 20vw;
-    font-weight: 900;
+    font-weight: 800;
     white-space: nowrap;
     letter-spacing: -0.5vw;
     span {
