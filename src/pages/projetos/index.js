@@ -19,7 +19,7 @@ function projetos({ data }) {
         <h1>Projetos</h1>
         <ProjectList>
           {project.map(({ node }) => (
-            <ProjectItem>
+            <ProjectItem key={node.fields.slug}>
               <Link to={node.fields.slug}>
                 <ProjectItemImage>
                   <img
