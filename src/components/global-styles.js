@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components"
-
+import "../../node_modules/locomotive-scroll/dist/locomotive-scroll.css"
 export default createGlobalStyle`
 *{
     margin:0;
