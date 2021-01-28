@@ -6,7 +6,7 @@ export const Container = styled.section`
 
 export const ProjectList = styled.div`
   position: relative;
-  padding: 80px 15px;
+  padding: 80px 55px;
 `
 
 export const ProjectItem = styled.article`
@@ -14,9 +14,7 @@ export const ProjectItem = styled.article`
   width: 100%;
   /* background-color: rgb(0, 0, 0, 0.1); */
   /* border-bottom: solid 4px black; */
-  font-weight: 500;
-  font-size: 4vw;
-  margin-bottom: 50px;
+  margin-bottom: 5px;
 
   a {
     text-decoration: none;
@@ -77,6 +75,10 @@ export const ProjectStickImage = styled.div`
 
 export const ProjectItemTitle = styled.div`
   text-transform: capitalize;
+  /* font-weight: 500; */
+  font-weight: 400;
+  font-size: clamp(38px, 4vw, 62px);
+  line-height: 1.3;
   /* text-transform: lowercase;
   &:first-letter {
     text-transform: uppercase;
