@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useState, useEffect } from "react"
 import { graphql, Link } from "gatsby"
 import Layout from "../components/Layout"
 import { HomeContainer } from "./styles"
@@ -13,9 +13,25 @@ import {
 } from "./projetos/styles"
 
 export default function Home({ data }) {
+  useEffect(() => {
+    console.log("mount")
+  })
   const project = data.portfolio.edges
 
-  const [projectImage, setProjectImage] = useState()
+  const [projectImage, setProjectImage] = useState("")
+  const [showImageSticky, setShowImageStick] = useState(false)
+
+  function insertProjectImage(e) {
+    let childrenImage = e.target.parentNode
+      .querySelector("img")
+      .getAttribute("src")
+    console.log(childrenImage)
+    setProjectImage(childrenImage)
+    setShowImageStick(true)
+  }
+  function hiddenImageSticky(e) {
+    setShowImageStick(false)
+  }
 
   return (
     <Layout>
@@ -36,7 +52,12 @@ export default function Home({ data }) {
                   alt={node.frontmatter.title}
                 />
               </ProjectItemImage>
-              <ProjectItemTitle>{node.frontmatter.title}</ProjectItemTitle>
+              <ProjectItemTitle
+                onMouseOver={insertProjectImage}
+                onMouseLeave={hiddenImageSticky}
+              >
+                {node.frontmatter.title}
+              </ProjectItemTitle>
             </Link>
           </ProjectItem>
         ))}
@@ -45,7 +66,10 @@ export default function Home({ data }) {
           data-scroll-sticky
           data-scroll-target="#pin"
           data-scroll-speed="3"
-        />
+          className={showImageSticky ? "active" : ""}
+        >
+          <img src={projectImage} />
+        </ProjectStickImage>
       </ProjectList>
     </Layout>
   )

@@ -21,7 +21,7 @@ function Layout({ children }) {
       el: scrollRef.current,
       smooth: true,
     })
-  })
+  }, [])
 
   return (
     <>

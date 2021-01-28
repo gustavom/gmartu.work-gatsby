@@ -23,8 +23,8 @@ export const ProjectItem = styled.article`
 `
 
 export const ProjectItemImage = styled.div`
-  /* display: none; */
-  display: block;
+  display: none;
+  /* display: block;
   position: absolute;
   width: 40%;
   height: 100vh;
@@ -43,12 +43,12 @@ export const ProjectItemImage = styled.div`
   }
   ${ProjectItem}:hover & {
     opacity: 1;
-  }
+  } */
 `
 export const ProjectStickImage = styled.div`
   position: absolute;
   width: 58.33333%;
-  margin-top: 20vh;
+  margin-top: 10vh;
   margin-left: 0;
   margin-right: 0;
   top: 0;
@@ -56,10 +56,19 @@ export const ProjectStickImage = styled.div`
   min-height: 100px;
   max-height: 60vh;
   overflow: hidden;
-  z-index: -1;
+  z-index: 10;
   /* opacity: 0; */
   transition: opacity 100ms ease-in;
   background-color: red;
+  opacity: 0;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  &.active {
+    opacity: 1;
+  }
 `
 
 export const ProjectItemTitle = styled.div``
