@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react"
 import { graphql, Link } from "gatsby"
 import Layout from "../components/Layout"
 import { HomeContainer } from "./styles"
+import VanillaTilt from "vanilla-tilt"
 
 import SEO from "../components/SEO"
 import {
@@ -15,6 +16,10 @@ import {
 export default function Home({ data }) {
   useEffect(() => {
     console.log("mount")
+    VanillaTilt.init(document.querySelectorAll(".letter"), {
+      max: 40,
+      speed: 400,
+    })
   })
   const project = data.portfolio.edges
 
@@ -38,8 +43,35 @@ export default function Home({ data }) {
       <SEO />
       <HomeContainer>
         <h1>
-          Front-End
-          <span>Developer</span>
+          <span className="letter" data-tilt data-tilt-reset="false">
+            F
+          </span>
+          r
+          <span className="letter" data-tilt data-tilt-reset="false">
+            o
+          </span>
+          nt-
+          <span className="letter" data-tilt data-tilt-reset="false">
+            E
+          </span>
+          n
+          <span className="letter" data-tilt data-tilt-reset="false">
+            d
+          </span>
+          <span className="developer">
+            D
+            <span className="letter" data-tilt data-tilt-reset="false">
+              e
+            </span>
+            vel
+            <span className="letter" data-tilt data-tilt-reset="false">
+              o
+            </span>
+            pe
+            <span className="letter" data-tilt data-tilt-reset="false">
+              r
+            </span>
+          </span>
         </h1>
       </HomeContainer>
       <ProjectList id="pin">

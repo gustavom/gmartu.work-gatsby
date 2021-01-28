@@ -17,7 +17,10 @@ export const HomeContainer = styled.div`
     font-weight: 800;
     white-space: nowrap;
     letter-spacing: -0.5vw;
-    span {
+    span.letter {
+      display: inline-block;
+    }
+    span.developer {
       margin-top: -8.3vw;
       font-size: 19.7vw;
       display: block;
