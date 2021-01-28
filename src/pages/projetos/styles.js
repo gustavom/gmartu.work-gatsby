@@ -6,16 +6,18 @@ export const Container = styled.section`
 
 export const ProjectList = styled.div`
   position: relative;
+  padding: 80px 15px;
 `
 
 export const ProjectItem = styled.article`
   /* position: relative; */
   width: 100%;
   /* background-color: rgb(0, 0, 0, 0.1); */
-  border-bottom: solid 4px black;
+  /* border-bottom: solid 4px black; */
   font-weight: 500;
   font-size: 4vw;
   margin-bottom: 50px;
+
   a {
     text-decoration: none;
     color: black;
@@ -48,13 +50,14 @@ export const ProjectItemImage = styled.div`
 export const ProjectStickImage = styled.div`
   position: absolute;
   width: 58.33333%;
+  height: 550px;
+  min-height: 100px;
+  max-height: 70vh;
   margin-top: 10vh;
   margin-left: 0;
   margin-right: 0;
   top: 0;
   right: 0;
-  min-height: 100px;
-  max-height: 60vh;
   overflow: hidden;
   z-index: 10;
   /* opacity: 0; */
@@ -65,10 +68,17 @@ export const ProjectStickImage = styled.div`
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
   }
   &.active {
     opacity: 1;
   }
 `
 
-export const ProjectItemTitle = styled.div``
+export const ProjectItemTitle = styled.div`
+  text-transform: capitalize;
+  /* text-transform: lowercase;
+  &:first-letter {
+    text-transform: uppercase;
+  } */
+`

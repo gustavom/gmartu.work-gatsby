@@ -49,14 +49,14 @@ export default function Home({ data }) {
               <ProjectItemImage>
                 <img
                   src={node.frontmatter.image}
-                  alt={node.frontmatter.title}
+                  alt={node.frontmatter.title.toLowerCase()}
                 />
               </ProjectItemImage>
               <ProjectItemTitle
                 onMouseOver={insertProjectImage}
                 onMouseLeave={hiddenImageSticky}
               >
-                {node.frontmatter.title}
+                {node.frontmatter.title.toLowerCase()}
               </ProjectItemTitle>
             </Link>
           </ProjectItem>
