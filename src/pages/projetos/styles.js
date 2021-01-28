@@ -47,7 +47,8 @@ export const ProjectItemImage = styled.div`
 `
 export const ProjectStickImage = styled.div`
   position: absolute;
-  width: 58.33333%;
+  /* width: 58.33333%; */
+  width: 48.33333%;
   height: 550px;
   min-height: 100px;
   max-height: 70vh;
