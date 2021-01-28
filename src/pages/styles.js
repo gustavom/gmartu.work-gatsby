@@ -4,12 +4,14 @@ export const Container = styled.div``
 
 export const HomeContainer = styled.div`
   width: 100vw;
-  min-height: 100vh;
+  min-height: 105vh;
   padding: 10px;
   background-color: rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: flex-end;
+  transition: background-color 0.5s ease-in;
   h1 {
+    transition: opacity 0.5s ease-in;
     padding: 0;
     margin: 0;
     border: 0;
@@ -25,6 +27,12 @@ export const HomeContainer = styled.div`
       font-size: 19.7vw;
       display: block;
       letter-spacing: -0.7vw;
+    }
+  }
+  &.is-inview {
+    background-color: rgba(0, 0, 0, 0.5);
+    h1 {
+      opacity: 0.4;
     }
   }
 `

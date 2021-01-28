@@ -41,7 +41,13 @@ export default function Home({ data }) {
   return (
     <Layout>
       <SEO />
-      <HomeContainer>
+      <HomeContainer
+        id="home-container"
+        data-scroll
+        data-scroll-repeat="true"
+        data-scroll-offset="50%"
+        data-scroll-target="#pin"
+      >
         <h1>
           <span className="letter" data-tilt data-tilt-reset="false">
             F
