@@ -12,7 +12,11 @@ export const Container = styled.nav`
       font-size: 1.4rem;
       font-weight: 500;
       text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       &:first-child {
+        justify-content: flex-start;
         text-align: left;
       }
       &:not(:last-child) {

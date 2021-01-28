@@ -7,7 +7,10 @@ function Navigation() {
     <Container>
       <ul>
         <li>
-          <Link to="/">gmartu</Link>
+          <Link to="/">
+            gustavo <br />
+            martusewicz
+          </Link>
         </li>
         <li>
           <Link to="/projetos">projetos</Link>
