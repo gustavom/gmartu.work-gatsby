@@ -1,7 +1,7 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import { graphql, Link } from "gatsby"
 import Layout from "../components/Layout"
-import { Container, HomeContainer } from "./styles"
+import { HomeContainer } from "./styles"
 
 import SEO from "../components/SEO"
 import {
@@ -9,10 +9,13 @@ import {
   ProjectItemImage,
   ProjectItemTitle,
   ProjectList,
+  ProjectStickImage,
 } from "./projetos/styles"
 
 export default function Home({ data }) {
   const project = data.portfolio.edges
+
+  const [projectImage, setProjectImage] = useState()
 
   return (
     <Layout>
@@ -23,7 +26,7 @@ export default function Home({ data }) {
           <span>Developer</span>
         </h1>
       </HomeContainer>
-      <ProjectList>
+      <ProjectList id="pin">
         {project.map(({ node }) => (
           <ProjectItem key={node.fields.slug}>
             <Link to={node.fields.slug}>
@@ -37,6 +40,12 @@ export default function Home({ data }) {
             </Link>
           </ProjectItem>
         ))}
+        <ProjectStickImage
+          data-scroll
+          data-scroll-sticky
+          data-scroll-target="#pin"
+          data-scroll-speed="3"
+        />
       </ProjectList>
     </Layout>
   )

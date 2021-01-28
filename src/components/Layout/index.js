@@ -24,11 +24,13 @@ function Layout({ children }) {
   })
 
   return (
-    <Main ref={scrollRef}>
-      <GlobalStyle />
+    <>
       <Header />
-      <>{children}</>
-    </Main>
+      <Main ref={scrollRef}>
+        <GlobalStyle />
+        <>{children}</>
+      </Main>
+    </>
   )
 }
 
