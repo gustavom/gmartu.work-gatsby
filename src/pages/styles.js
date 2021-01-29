@@ -20,10 +20,9 @@ export const HomeContainer = styled.div`
     span.letter {
       display: inline-block;
     }
-    span.developer {
+    div.developer {
       margin-top: -8.3vw;
       font-size: 19.7vw;
-      display: block;
       letter-spacing: -0.7vw;
     }
   }
