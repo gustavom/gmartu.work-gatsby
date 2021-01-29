@@ -62,7 +62,8 @@ export const ProjectStickImage = styled.div`
   top: 0;
   right: 0;
   overflow: hidden;
-  z-index: 10;
+  /* z-index: 10; */
+  z-index: -1;
   /* opacity: 0; */
   transition: opacity 100ms ease-in;
   background-color: red;
