@@ -33,32 +33,37 @@ export default function Home({ data }) {
           <span className="letter" data-tilt data-tilt-reset="false">
             F
           </span>
-          r
+          <span>r</span>
           <span className="letter" data-tilt data-tilt-reset="false">
             o
           </span>
-          nt-
+          <span>n</span>
+          <span>t</span>
+          <span>-</span>
           <span className="letter" data-tilt data-tilt-reset="false">
             E
           </span>
-          n
+          <span>n</span>
           <span className="letter" data-tilt data-tilt-reset="false">
             d
           </span>
-          <span className="developer">
-            D
+          <div className="developer">
+            <span>D</span>
             <span className="letter" data-tilt data-tilt-reset="false">
               e
             </span>
-            vel
+            <span>v</span>
+            <span>e</span>
+            <span>l</span>
             <span className="letter" data-tilt data-tilt-reset="false">
               o
             </span>
-            pe
+            <span>p</span>
+            <span>e</span>
             <span className="letter" data-tilt data-tilt-reset="false">
               r
             </span>
-          </span>
+          </div>
         </h1>
       </HomeContainer>
 
