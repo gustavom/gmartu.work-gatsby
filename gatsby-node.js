@@ -6,6 +6,21 @@ const { createFilePath } = require("gatsby-source-filesystem")
 const blogPost = path.resolve(`./src/templates/blog-post.js`)
 const projectPage = path.resolve(`./src/templates/project-page.js`)
 
+exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
+  if (stage === "build-html") {
+    actions.setWebpackConfig({
+      module: {
+        rules: [
+          {
+            test: /locomotive-scroll/,
+            use: loaders.null(),
+          },
+        ],
+      },
+    })
+  }
+}
+
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
   if (node.internal.type === `MarkdownRemark`) {
