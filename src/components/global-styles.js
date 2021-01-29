@@ -13,15 +13,23 @@ export default createGlobalStyle`
   html, body, #root{
     height: 100%;
   }
-  body{
-    -webkit-font-smoothing: antialiased;
-  }
   body {
+    -webkit-font-smoothing: antialiased;
     padding:0;
     font-size: 16px;
     /* font-family: "IBM Plex Sans"; */
     font-family: "Inter",sans-serif;
     font-weight: 400;
+    &:before{
+      content: '';
+      display: block;
+      z-index: 99999;
+      position: fixed;
+      width:100%;
+      height: 100vh;
+      background-color: #000;
+      animation: lose-height-up 0.9s cubic-bezier(0.42, 0, 0, 1.24) both;
+    }
   }
   input, button, textarea,select{
     font-family: "Inter",sans-serif;
@@ -38,4 +46,14 @@ export default createGlobalStyle`
     font-size: 1.2rem;
     line-height:1.5
   }
+
+  @keyframes lose-height-up {
+  from {
+    max-height:100%;
+  }
+
+  to {
+    max-height: 0%;
+  }
+}
 `
