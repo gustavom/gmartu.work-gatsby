@@ -30,9 +30,9 @@ export const HomeContainer = styled.div`
     }
   }
   &.is-inview {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.9);
     h1 {
-      opacity: 0.4;
+      opacity: 0.2;
     }
   }
 `
