@@ -5,13 +5,8 @@ import { HomeContainer } from "./styles"
 import VanillaTilt from "vanilla-tilt"
 
 import SEO from "../components/SEO"
-import {
-  ProjectItem,
-  ProjectItemImage,
-  ProjectItemTitle,
-  ProjectList,
-  ProjectStickImage,
-} from "./projetos/styles"
+
+import ProjectListComponent from "./../components/ProjectListComponent"
 
 export default function Home({ data }) {
   useEffect(() => {
@@ -21,22 +16,8 @@ export default function Home({ data }) {
       speed: 400,
     })
   })
+
   const project = data.portfolio.edges
-
-  const [projectImage, setProjectImage] = useState("")
-  const [showImageSticky, setShowImageStick] = useState(false)
-
-  function insertProjectImage(e) {
-    let childrenImage = e.target.parentNode
-      .querySelector("img")
-      .getAttribute("src")
-    console.log(childrenImage)
-    setProjectImage(childrenImage)
-    setShowImageStick(true)
-  }
-  function hiddenImageSticky(e) {
-    setShowImageStick(false)
-  }
 
   return (
     <Layout>
@@ -46,7 +27,7 @@ export default function Home({ data }) {
         data-scroll
         data-scroll-repeat="true"
         data-scroll-offset="50%"
-        data-scroll-target="#pin"
+        data-scroll-target="#project-list"
       >
         <h1>
           <span className="letter" data-tilt data-tilt-reset="false">
@@ -80,35 +61,8 @@ export default function Home({ data }) {
           </span>
         </h1>
       </HomeContainer>
-      <ProjectList id="pin">
-        {project.map(({ node }) => (
-          <ProjectItem key={node.fields.slug}>
-            <Link to={node.fields.slug}>
-              <ProjectItemImage>
-                <img
-                  src={node.frontmatter.image}
-                  alt={node.frontmatter.title.toLowerCase()}
-                />
-              </ProjectItemImage>
-              <ProjectItemTitle
-                onMouseOver={insertProjectImage}
-                onMouseLeave={hiddenImageSticky}
-              >
-                {node.frontmatter.title.toLowerCase()}
-              </ProjectItemTitle>
-            </Link>
-          </ProjectItem>
-        ))}
-        <ProjectStickImage
-          data-scroll
-          data-scroll-sticky
-          data-scroll-target="#pin"
-          data-scroll-speed="3"
-          className={showImageSticky ? "active" : ""}
-        >
-          <img src={projectImage} />
-        </ProjectStickImage>
-      </ProjectList>
+
+      <ProjectListComponent dataReceiver={project} />
     </Layout>
   )
 }

@@ -1,14 +1,10 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 // import Img from "gatsby-image"
 import Layout from "../../components/Layout"
-import {
-  Container,
-  ProjectList,
-  ProjectItem,
-  ProjectItemImage,
-  ProjectItemTitle,
-} from "./styles"
+import { Container } from "./styles"
+
+import ProjectListComponent from "../../components/ProjectListComponent"
 
 function projetos({ data }) {
   console.log(data)
@@ -17,21 +13,7 @@ function projetos({ data }) {
     <Layout>
       <Container>
         <h1>Projetos</h1>
-        <ProjectList>
-          {project.map(({ node }) => (
-            <ProjectItem key={node.fields.slug}>
-              <Link to={node.fields.slug}>
-                <ProjectItemImage>
-                  <img
-                    src={node.frontmatter.image}
-                    alt={node.frontmatter.title}
-                  />
-                </ProjectItemImage>
-                <ProjectItemTitle>{node.frontmatter.title}</ProjectItemTitle>
-              </Link>
-            </ProjectItem>
-          ))}
-        </ProjectList>
+        <ProjectListComponent dataReceiver={project} />
       </Container>
     </Layout>
   )
