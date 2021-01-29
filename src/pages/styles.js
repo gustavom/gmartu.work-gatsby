@@ -1,7 +1,5 @@
 import styled from "styled-components"
 
-export const Container = styled.div``
-
 export const HomeContainer = styled.div`
   width: 100vw;
   min-height: 105vh;
