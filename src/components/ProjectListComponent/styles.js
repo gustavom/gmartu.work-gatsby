@@ -8,6 +8,19 @@ export const ProjectList = styled.div`
       opacity: 0.1;
     }
   } */
+  &.initial-layout {
+    & > article > a > div:nth-child(2) {
+      transition: opacity 0.3s ease-in-out;
+    }
+    &:hover {
+      & > article > a > div:nth-child(2) {
+        opacity: 0.05;
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
 `
 
 export const ProjectItem = styled.article`

@@ -9,17 +9,25 @@ import {
 } from "./styles"
 
 function ProjectListComponent({ dataReceiver }) {
-  const [projectListTitles, setProjectListTitles] = useState([])
+  // const [projectListTitles, setProjectListTitles] = useState([])
   const [projectImage, setProjectImage] = useState("")
   const [showImageSticky, setShowImageStick] = useState(false)
 
   useEffect(() => {
+    console.log(dataReceiver)
+    console.log("mount")
     const projectElements = [
       ...document.querySelectorAll(
         "#project-list article >a >div:nth-child(2)"
       ),
     ]
-    setProjectListTitles(projectElements)
+    console.log(projectElements)
+    // const projectElements = [
+    //   ...document.querySelectorAll(
+    //     "#project-list article >a >div:nth-child(2)"
+    //   ),
+    // ]
+    // setProjectListTitles(projectElements)
   })
 
   function insertProjectImage(e) {
@@ -29,22 +37,28 @@ function ProjectListComponent({ dataReceiver }) {
     console.log(childrenImage)
     setProjectImage(childrenImage)
     setShowImageStick(true)
-    projectListTitles.map(item => {
+    projectElements.map(item => {
+      console.log("eita")
       item.classList.remove("fade-in")
       item.classList.add("fade-out")
     })
     e.target.classList.add("fade-in")
+    if (projectElements == []) {
+      console.log("ta sem nada")
+    } else {
+      document.querySelector("#project-list").classList.remove("initial-layout")
+    }
   }
   function hiddenImageSticky(e) {
     setShowImageStick(false)
-    projectListTitles.map(item => {
+    projectElements.map(item => {
       item.classList.remove("fade-in")
       item.classList.remove("fade-out")
     })
   }
 
   return (
-    <ProjectList id="project-list">
+    <ProjectList id="project-list" className="initial-layout">
       {dataReceiver
         ? dataReceiver.map(item => (
             <ProjectItem key={item.node.fields.slug}>

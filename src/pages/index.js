@@ -9,12 +9,21 @@ import SEO from "../components/SEO"
 import ProjectListComponent from "./../components/ProjectListComponent"
 
 export default function Home({ data }) {
+  // const [letters, setLetters] = useState([])
   useEffect(() => {
     console.log("mount")
     VanillaTilt.init(document.querySelectorAll(".letter"), {
       max: 40,
       speed: 400,
     })
+    // function setClassOnLetters() {
+    //   const getLetters = [
+    //     ...document.querySelectorAll("#home-container h1 span"),
+    //   ]
+    //   setLetters(getLetters)
+    //   console.log(letters)
+    // }
+    // setClassOnLetters()
   })
 
   const project = data.portfolio.edges
