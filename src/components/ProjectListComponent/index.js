@@ -33,6 +33,7 @@ function ProjectListComponent({ dataReceiver }) {
       .querySelector("img")
       .getAttribute("src")
     console.log(childrenImage)
+
     setProjectImage(childrenImage)
     setShowImageStick(true)
     projectElements.map(item => {
