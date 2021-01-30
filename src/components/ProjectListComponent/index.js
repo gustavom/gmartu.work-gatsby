@@ -84,7 +84,7 @@ function ProjectListComponent({ dataReceiver }) {
         data-scroll-speed="3"
         className={showImageSticky ? "active" : ""}
       >
-        <img src={projectImage} />
+        <img src={projectImage} alt="stick" />
       </ProjectStickImage>
     </ProjectList>
   )

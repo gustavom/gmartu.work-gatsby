@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react"
-import { graphql, Link } from "gatsby"
+import React, { useEffect } from "react"
+import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import { HomeContainer } from "./styles"
 import VanillaTilt from "vanilla-tilt"
