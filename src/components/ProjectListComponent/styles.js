@@ -3,11 +3,11 @@ import styled from "styled-components"
 export const ProjectList = styled.div`
   position: relative;
   padding: 80px 55px;
-  &:hover {
+  /* &:hover {
     article {
       opacity: 0.1;
     }
-  }
+  } */
 `
 
 export const ProjectItem = styled.article`
@@ -16,14 +16,23 @@ export const ProjectItem = styled.article`
   /* background-color: rgb(0, 0, 0, 0.1); */
   /* border-bottom: solid 4px black; */
   margin-bottom: 5px;
-  transition: opacity 0.3s ease-in-out;
   a {
     text-decoration: none;
     color: #000;
   }
-  &:hover {
-    opacity: 1 !important;
+
+  & > a > div:nth-child(2) {
+    transition: opacity 0.3s ease-in-out;
+    &.fade-out {
+      opacity: 0.05;
+    }
+    &.fade-in {
+      opacity: 1;
+    }
   }
+  /* &:hover {
+    opacity: 1 !important;
+  } */
 `
 
 export const ProjectItemImage = styled.div`

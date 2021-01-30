@@ -9,12 +9,18 @@ import {
 } from "./styles"
 
 function ProjectListComponent({ dataReceiver }) {
-  useEffect(() => {
-    // console.log(dataReceiver)
-  })
-
+  const [projectListTitles, setProjectListTitles] = useState([])
   const [projectImage, setProjectImage] = useState("")
   const [showImageSticky, setShowImageStick] = useState(false)
+
+  useEffect(() => {
+    const projectElements = [
+      ...document.querySelectorAll(
+        "#project-list article >a >div:nth-child(2)"
+      ),
+    ]
+    setProjectListTitles(projectElements)
+  })
 
   function insertProjectImage(e) {
     let childrenImage = e.target.parentNode
@@ -23,9 +29,18 @@ function ProjectListComponent({ dataReceiver }) {
     console.log(childrenImage)
     setProjectImage(childrenImage)
     setShowImageStick(true)
+    projectListTitles.map(item => {
+      item.classList.remove("fade-in")
+      item.classList.add("fade-out")
+    })
+    e.target.classList.add("fade-in")
   }
   function hiddenImageSticky(e) {
     setShowImageStick(false)
+    projectListTitles.map(item => {
+      item.classList.remove("fade-in")
+      item.classList.remove("fade-out")
+    })
   }
 
   return (
