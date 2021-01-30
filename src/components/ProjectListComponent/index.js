@@ -12,16 +12,14 @@ function ProjectListComponent({ dataReceiver }) {
   // const [projectListTitles, setProjectListTitles] = useState([])
   const [projectImage, setProjectImage] = useState("")
   const [showImageSticky, setShowImageStick] = useState(false)
+  const projectElements = [
+    ...document.querySelectorAll("#project-list article >a >div:nth-child(2)"),
+  ]
+  console.log(projectElements)
 
   useEffect(() => {
     console.log(dataReceiver)
     console.log("mount")
-    const projectElements = [
-      ...document.querySelectorAll(
-        "#project-list article >a >div:nth-child(2)"
-      ),
-    ]
-    console.log(projectElements)
     // const projectElements = [
     //   ...document.querySelectorAll(
     //     "#project-list article >a >div:nth-child(2)"
@@ -43,11 +41,11 @@ function ProjectListComponent({ dataReceiver }) {
       item.classList.add("fade-out")
     })
     e.target.classList.add("fade-in")
-    if (projectElements == []) {
-      console.log("ta sem nada")
-    } else {
-      document.querySelector("#project-list").classList.remove("initial-layout")
-    }
+    // if (projectElements == []) {
+    //   console.log("ta sem nada")
+    // } else {
+    //   document.querySelector("#project-list").classList.remove("initial-layout")
+    // }
   }
   function hiddenImageSticky(e) {
     setShowImageStick(false)
@@ -58,7 +56,7 @@ function ProjectListComponent({ dataReceiver }) {
   }
 
   return (
-    <ProjectList id="project-list" className="initial-layout">
+    <ProjectList id="project-list">
       {dataReceiver
         ? dataReceiver.map(item => (
             <ProjectItem key={item.node.fields.slug}>
