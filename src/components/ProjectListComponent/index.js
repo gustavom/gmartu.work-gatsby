@@ -9,23 +9,24 @@ import {
 } from "./styles"
 
 function ProjectListComponent({ dataReceiver }) {
-  const [projectListTitles, setProjectListTitles] = useState([])
+  // const [projectListTitles, setProjectListTitles] = useState([])
+  const [containerFadeAnimation, setContainerFadeAnimation] = useState("")
   const [projectImage, setProjectImage] = useState("")
   const [showImageSticky, setShowImageStick] = useState(false)
-  const projectElements = [
-    ...document.querySelectorAll("#project-list article >a >div:nth-child(2)"),
-  ]
-  console.log(projectElements)
+  // const projectElements = [
+  //   ...document.querySelectorAll("#project-list article >a >div:nth-child(2)"),
+  // ]
+  // console.log(projectElements)
 
   useEffect(() => {
     // console.log(dataReceiver)
     // console.log("mount")
-    const projectElements = [
-      ...document.querySelectorAll(
-        "#project-list article >a >div:nth-child(2)"
-      ),
-    ]
-    setProjectListTitles(projectElements)
+    // const projectElements = [
+    //   ...document.querySelectorAll(
+    //     "#project-list article >a >div:nth-child(2)"
+    //   ),
+    // ]
+    // setProjectListTitles(projectElements)
   })
 
   function insertProjectImage(e) {
@@ -35,26 +36,30 @@ function ProjectListComponent({ dataReceiver }) {
     // console.log(childrenImage)
     setProjectImage(childrenImage)
     setShowImageStick(true)
-    projectElements.map(item => {
-      // console.log("eita")
-      item.classList.remove("fade-in")
-      item.classList.add("fade-out")
-    })
+    // projectElements.map(item => {
+    //   // console.log("eita")
+    //   item.classList.remove("fade-in")
+    //   item.classList.add("fade-out")
+    // })
+    setContainerFadeAnimation("fade-animation")
     e.target.classList.add("fade-in")
   }
   function hiddenImageSticky(e) {
+    setContainerFadeAnimation("")
     setShowImageStick(false)
-    projectElements.map(item => {
-      item.classList.remove("fade-in")
-      item.classList.remove("fade-out")
-    })
+    e.target.classList.remove("fade-in")
+    // projectElements.map(item => {
+    //   item.classList.remove("fade-in")
+    //   item.classList.remove("fade-out")
+    // })
   }
 
   return (
-    <ProjectList id="project-list">
+    <ProjectList id="project-list" className={containerFadeAnimation}>
       {dataReceiver
-        ? dataReceiver.map(item => (
+        ? dataReceiver.map((item, index, array) => (
             <ProjectItem key={item.node.fields.slug}>
+              {console.log({ array })}
               <Link to={item.node.fields.slug}>
                 <ProjectItemImage>
                   <img

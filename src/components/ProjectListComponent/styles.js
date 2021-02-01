@@ -29,18 +29,24 @@ export const ProjectItem = memo(styled.article`
   width: 100%;
   /* background-color: rgb(0, 0, 0, 0.1); */
   /* border-bottom: solid 4px black; */
-  margin-bottom: 5px;
+  /* margin-bottom: 5px; */
   a {
     text-decoration: none;
     color: #000;
+    & > div:nth-child(2) {
+      padding-bottom: 5px;
+    }
   }
 
-  & > a > div:nth-child(2) {
+  .fade-animation & > a > div:nth-child(2) {
     transition: opacity 0.3s ease-in-out;
+    /* outline: solid 1px red; */
+    opacity: 0.05;
     &.fade-out {
       opacity: 0.05;
     }
     &.fade-in {
+      /* outline: solid 1px green; */
       opacity: 1;
     }
   }
