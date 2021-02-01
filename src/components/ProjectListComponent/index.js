@@ -1,4 +1,4 @@
-import React, { useEffect, useState, memo } from "react"
+import React, { useState, memo } from "react"
 import { Link } from "gatsby"
 import {
   ProjectList,
@@ -9,38 +9,17 @@ import {
 } from "./styles"
 
 function ProjectListComponent({ dataReceiver }) {
-  // const [projectListTitles, setProjectListTitles] = useState([])
   const [containerFadeAnimation, setContainerFadeAnimation] = useState("")
   const [projectImage, setProjectImage] = useState("")
   const [showImageSticky, setShowImageStick] = useState(false)
-  // const projectElements = [
-  //   ...document.querySelectorAll("#project-list article >a >div:nth-child(2)"),
-  // ]
-  // console.log(projectElements)
-
-  useEffect(() => {
-    // console.log(dataReceiver)
-    // console.log("mount")
-    // const projectElements = [
-    //   ...document.querySelectorAll(
-    //     "#project-list article >a >div:nth-child(2)"
-    //   ),
-    // ]
-    // setProjectListTitles(projectElements)
-  })
 
   function insertProjectImage(e) {
     let childrenImage = e.target.parentNode
       .querySelector("img")
       .getAttribute("src")
-    // console.log(childrenImage)
     setProjectImage(childrenImage)
     setShowImageStick(true)
-    // projectElements.map(item => {
-    //   // console.log("eita")
-    //   item.classList.remove("fade-in")
-    //   item.classList.add("fade-out")
-    // })
+
     setContainerFadeAnimation("fade-animation")
     e.target.classList.add("fade-in")
   }
@@ -48,10 +27,6 @@ function ProjectListComponent({ dataReceiver }) {
     setContainerFadeAnimation("")
     setShowImageStick(false)
     e.target.classList.remove("fade-in")
-    // projectElements.map(item => {
-    //   item.classList.remove("fade-in")
-    //   item.classList.remove("fade-out")
-    // })
   }
 
   return (
