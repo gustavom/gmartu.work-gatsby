@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState, memo } from "react"
 import { Link } from "gatsby"
 import {
   ProjectList,
@@ -9,7 +9,7 @@ import {
 } from "./styles"
 
 function ProjectListComponent({ dataReceiver }) {
-  // const [projectListTitles, setProjectListTitles] = useState([])
+  const [projectListTitles, setProjectListTitles] = useState([])
   const [projectImage, setProjectImage] = useState("")
   const [showImageSticky, setShowImageStick] = useState(false)
   const projectElements = [
@@ -18,35 +18,29 @@ function ProjectListComponent({ dataReceiver }) {
   console.log(projectElements)
 
   useEffect(() => {
-    console.log(dataReceiver)
-    console.log("mount")
-    // const projectElements = [
-    //   ...document.querySelectorAll(
-    //     "#project-list article >a >div:nth-child(2)"
-    //   ),
-    // ]
-    // setProjectListTitles(projectElements)
+    // console.log(dataReceiver)
+    // console.log("mount")
+    const projectElements = [
+      ...document.querySelectorAll(
+        "#project-list article >a >div:nth-child(2)"
+      ),
+    ]
+    setProjectListTitles(projectElements)
   })
 
   function insertProjectImage(e) {
     let childrenImage = e.target.parentNode
       .querySelector("img")
       .getAttribute("src")
-    console.log(childrenImage)
-
+    // console.log(childrenImage)
     setProjectImage(childrenImage)
     setShowImageStick(true)
     projectElements.map(item => {
-      console.log("eita")
+      // console.log("eita")
       item.classList.remove("fade-in")
       item.classList.add("fade-out")
     })
     e.target.classList.add("fade-in")
-    // if (projectElements == []) {
-    //   console.log("ta sem nada")
-    // } else {
-    //   document.querySelector("#project-list").classList.remove("initial-layout")
-    // }
   }
   function hiddenImageSticky(e) {
     setShowImageStick(false)
@@ -91,4 +85,4 @@ function ProjectListComponent({ dataReceiver }) {
   )
 }
 
-export default ProjectListComponent
+export default memo(ProjectListComponent)

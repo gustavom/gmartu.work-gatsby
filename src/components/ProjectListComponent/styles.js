@@ -1,3 +1,4 @@
+import { memo } from "react"
 import styled from "styled-components"
 
 export const ProjectList = styled.div`
@@ -23,7 +24,7 @@ export const ProjectList = styled.div`
   }
 `
 
-export const ProjectItem = styled.article`
+export const ProjectItem = memo(styled.article`
   /* position: relative; */
   width: 100%;
   /* background-color: rgb(0, 0, 0, 0.1); */
@@ -44,9 +45,9 @@ export const ProjectItem = styled.article`
     }
   }
   /* &:hover {
-    opacity: 1 !important;
-  } */
-`
+  opacity: 1 !important;
+} */
+`)
 
 export const ProjectItemImage = styled.div`
   display: none;
