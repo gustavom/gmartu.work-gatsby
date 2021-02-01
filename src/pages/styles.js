@@ -34,8 +34,18 @@ export const HomeContainer = styled.div`
     font-weight: 800;
     white-space: nowrap;
     letter-spacing: -0.5vw;
-    span {
-      ${getAnimations()}
+    /* span {
+      opacity: 0;
+    } */
+    &.on-animations {
+      span {
+        ${getAnimations()};
+      }
+    }
+    &.end-animations {
+      span {
+        opacity: 1;
+      }
     }
     span.letter {
       display: inline-block;
