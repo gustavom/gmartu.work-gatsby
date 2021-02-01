@@ -1,4 +1,23 @@
+import { createGlobalStyle } from "styled-components"
 import styled from "styled-components"
+
+export default createGlobalStyle`
+  body{
+    header{
+       nav{
+         li:nth-child(2){
+          animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.5s both;
+         }
+         li:nth-child(3){
+          animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.7s both;
+         }
+         li:nth-child(4){
+          animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.9s both;
+         }
+       }
+    }
+  }
+`
 
 function template(i, duration) {
   return `

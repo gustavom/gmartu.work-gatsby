@@ -10,6 +10,8 @@ import SEO from "../components/SEO"
 
 import ProjectListComponent from "./../components/ProjectListComponent"
 
+import GlobalStyles from "./styles"
+
 export default function Home({ data }) {
   // const [letters, setLetters] = useState([])
   const [onAnimations, setOnAnimations] = useState("")
@@ -39,6 +41,7 @@ export default function Home({ data }) {
 
   return (
     <Layout>
+      <GlobalStyles />
       <SEO />
       <HomeContainer
         id="home-container"
