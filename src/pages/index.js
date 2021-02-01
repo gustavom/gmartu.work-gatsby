@@ -19,24 +19,22 @@ export default function Home({ data }) {
       max: 40,
       speed: 400,
     })
-    // function setClassOnLetters() {
-    //   const getLetters = [
-    //     ...document.querySelectorAll("#home-container h1 span"),
-    //   ]
-    //   setLetters(getLetters)
-    //   console.log(letters)
-    // }
-    // setClassOnLetters()
-    // setTimeout(function () {
-    //   setOnAnimations("on-animations")
-    // }, 1000)
   })
 
   const project = data.portfolio.edges
 
-  const animateSlideInLeft = {
-    offSet: { x: -1000, opacity: 0 },
-    onSet: { x: 0, opacity: 1 },
+  const container = {
+    hidden: { x: -1000, opacity: 0 },
+    show: {
+      x: 0,
+      opacity: 1,
+      transition: { type: "tween", staggerChildren: 0.1, delayChildren: 0.9 },
+    },
+  }
+
+  const item = {
+    hidden: { x: -1000, opacity: 0 },
+    show: { x: 0, opacity: 1 },
   }
 
   return (
@@ -49,50 +47,104 @@ export default function Home({ data }) {
         data-scroll-offset="50%"
         data-scroll-target="#project-list"
       >
-        <h1 className={onAnimations}>
+        <motion.h1
+          variants={container}
+          initial="hidden"
+          animate="show"
+          className={onAnimations}
+        >
           <motion.span
-            initial="offSet"
-            animate="onSet"
-            variants={animateSlideInLeft}
-            transition={{ ease: "easeIn", duration: 0.5 }}
+            variants={item}
             className="letter"
             data-tilt
             data-tilt-reset="false"
           >
             F
           </motion.span>
-          <span>r</span>
-          <span className="letter" data-tilt data-tilt-reset="false">
+          <motion.span variants={item} className="letter">
+            r
+          </motion.span>
+          <motion.span
+            variants={item}
+            className="letter"
+            data-tilt
+            data-tilt-reset="false"
+          >
             o
-          </span>
-          <span>n</span>
-          <span>t</span>
-          <span>-</span>
-          <span className="letter" data-tilt data-tilt-reset="false">
+          </motion.span>
+          <motion.span variants={item} className="letter">
+            n
+          </motion.span>
+          <motion.span variants={item} className="letter">
+            t
+          </motion.span>
+          <motion.span variants={item} className="letter">
+            -
+          </motion.span>
+          <motion.span
+            variants={item}
+            className="letter"
+            data-tilt
+            data-tilt-reset="false"
+          >
             E
-          </span>
-          <span>n</span>
-          <span className="letter" data-tilt data-tilt-reset="false">
+          </motion.span>
+          <motion.span variants={item} className="letter">
+            n
+          </motion.span>
+          <motion.span
+            variants={item}
+            className="letter"
+            data-tilt
+            data-tilt-reset="false"
+          >
             d
-          </span>
+          </motion.span>
           <div className="developer">
-            <span>D</span>
-            <span className="letter" data-tilt data-tilt-reset="false">
+            <motion.span variants={item} className="letter">
+              D
+            </motion.span>
+            <motion.span
+              variants={item}
+              className="letter"
+              data-tilt
+              data-tilt-reset="false"
+            >
               e
-            </span>
-            <span>v</span>
-            <span>e</span>
-            <span>l</span>
-            <span className="letter" data-tilt data-tilt-reset="false">
+            </motion.span>
+            <motion.span variants={item} className="letter">
+              v
+            </motion.span>
+            <motion.span variants={item} className="letter">
+              e
+            </motion.span>
+            <motion.span variants={item} className="letter">
+              l
+            </motion.span>
+            <motion.span
+              variants={item}
+              className="letter"
+              data-tilt
+              data-tilt-reset="false"
+            >
               o
-            </span>
-            <span>p</span>
-            <span>e</span>
-            <span className="letter" data-tilt data-tilt-reset="false">
+            </motion.span>
+            <motion.span variants={item} className="letter">
+              p
+            </motion.span>
+            <motion.span variants={item} className="letter">
+              e
+            </motion.span>
+            <motion.span
+              variants={item}
+              className="letter"
+              data-tilt
+              data-tilt-reset="false"
+            >
               r
-            </span>
+            </motion.span>
           </div>
-        </h1>
+        </motion.h1>
       </HomeContainer>
 
       <ProjectListComponent dataReceiver={project} />
