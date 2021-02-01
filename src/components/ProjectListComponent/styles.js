@@ -114,6 +114,7 @@ export const ProjectItemTitle = styled.div`
   font-weight: 400;
   font-size: clamp(38px, 4vw, 62px);
   line-height: 1.3;
+  display: inline-block;
   /* text-transform: lowercase;
   &:first-letter {
     text-transform: uppercase;
