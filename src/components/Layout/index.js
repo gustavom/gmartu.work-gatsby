@@ -25,13 +25,8 @@ function Layout({ children }) {
 
   return (
     <>
-      <Header
-        data-scroll
-        data-scroll-repeat="true"
-        data-scroll-offset="45%"
-        data-scroll-target="#project-list"
-      />
-      <Main ref={scrollRef}>
+      <Main ref={scrollRef} id="main-el">
+        <Header />
         <GlobalStyle />
         <>{children}</>
       </Main>

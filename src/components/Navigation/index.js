@@ -2,10 +2,20 @@ import React from "react"
 import { Link } from "gatsby"
 import { Container } from "./styles"
 
+import { motion, useTransform, useViewportScroll } from "framer-motion"
+
 function Navigation() {
+  const { scrollYProgress } = useViewportScroll()
+  console.log({ scrollYProgress })
+  const frameOpacity = useTransform(scrollYProgress, [0.1, 0.2], [1, 0])
+
   return (
-    <Container>
-      <ul>
+    <Container data-scroll data-scroll-sticky data-scroll-target="#main-el">
+      <motion.ul
+        style={{
+          opacity: frameOpacity,
+        }}
+      >
         <li>
           <Link to="/">
             Gustavo <br />
@@ -21,7 +31,7 @@ function Navigation() {
         <li>
           <Link to="/sobre">sobre</Link>
         </li>
-      </ul>
+      </motion.ul>
     </Container>
   )
 }
