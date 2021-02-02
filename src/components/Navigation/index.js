@@ -8,8 +8,8 @@ function Navigation() {
       <ul>
         <li>
           <Link to="/">
-            gustavo <br />
-            martusewicz
+            Gustavo <br />
+            Martusewicz
           </Link>
         </li>
         <li>
