@@ -47,7 +47,7 @@ export default function Home({ data }) {
         id="home-container"
         data-scroll
         data-scroll-repeat="true"
-        data-scroll-offset="50%"
+        data-scroll-offset="45%"
         data-scroll-target="#project-list"
       >
         <motion.h1
