@@ -4,7 +4,7 @@ import styled from "styled-components"
 export default createGlobalStyle`
   body{
     main#main-el header{
-      background-color: #e5e5e5;
+      background-color: rgba(229,229,229,.8);
        nav{
          li:nth-child(2){
           animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.5s both;
@@ -87,7 +87,7 @@ export const HomeContainer = styled.div`
     font-weight: 700;
     white-space: nowrap;
     letter-spacing: -0.5vw;
-    transition: bottom 0.9s linear;
+    transition: bottom 0.2s linear;
     color: #fff;
   }
   &.is-inview {
