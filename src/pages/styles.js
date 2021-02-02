@@ -37,15 +37,17 @@ function getAnimations() {
 }
 
 export const HomeContainer = styled.div`
+  position: relative;
   width: 100vw;
   min-height: 105vh;
   padding: 10px;
   background-color: rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: flex-end;
-  transition: background-color 0.5s ease-in;
+  transition: background-color 0.3s ease-in;
+  overflow: hidden;
   h1 {
-    transition: opacity 0.5s ease-in;
+    transition: opacity 0.3s ease-in;
     padding: 0;
     margin: 0;
     border: 0;
@@ -75,10 +77,25 @@ export const HomeContainer = styled.div`
       letter-spacing: -0.7vw;
     }
   }
+  &:after {
+    content: "Projetos";
+    position: absolute;
+    left: 50px;
+    bottom: -500px;
+    font-size: 7vw;
+    font-weight: 700;
+    white-space: nowrap;
+    letter-spacing: -0.5vw;
+    transition: bottom 0.9s linear;
+    color: #fff;
+  }
   &.is-inview {
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(0, 0, 0, 1);
     h1 {
-      opacity: 0.2;
+      opacity: 0;
+    }
+    &:after {
+      bottom: 30px;
     }
   }
   @keyframes slide-in-left {
