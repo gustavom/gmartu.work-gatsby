@@ -11,7 +11,7 @@ import locomotiveScroll from "locomotive-scroll"
 
 function Layout({ children }) {
   useEffect(() => {
-    console.log("mount")
+    console.log("mount layout base")
   }, [])
 
   const scrollRef = React.createRef()
@@ -25,7 +25,12 @@ function Layout({ children }) {
 
   return (
     <>
-      <Header />
+      <Header
+        data-scroll
+        data-scroll-repeat="true"
+        data-scroll-offset="45%"
+        data-scroll-target="#project-list"
+      />
       <Main ref={scrollRef}>
         <GlobalStyle />
         <>{children}</>
