@@ -3,7 +3,8 @@ import styled from "styled-components"
 
 export default createGlobalStyle`
   body{
-    header{
+    main#main-el header{
+      background-color: #e5e5e5;
        nav{
          li:nth-child(2){
           animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.5s both;

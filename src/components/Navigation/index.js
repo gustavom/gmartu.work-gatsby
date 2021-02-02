@@ -10,7 +10,7 @@ function Navigation() {
   const frameOpacity = useTransform(scrollYProgress, [0.1, 0.2], [1, 0])
 
   return (
-    <Container data-scroll data-scroll-sticky data-scroll-target="#main-el">
+    <Container id="container-nav" data-scroll-id="#container-nav">
       <motion.ul
         style={{
           opacity: frameOpacity,
