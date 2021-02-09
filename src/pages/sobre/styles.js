@@ -6,8 +6,10 @@ export const Container = styled.section`
   padding: 7.5rem 4rem 1.6rem;
   /* padding: 4.5rem 1.6rem 1.6rem; */
   h1 {
-    font-size: 50px;
-    font-weight: 600;
+    /* font-size: 50px;
+    font-weight: 600; */
+    font-size: 70px;
+    font-weight: 900;
   }
   p {
     font-size: 1.6rem;
