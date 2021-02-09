@@ -2,16 +2,41 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 
+import {
+  Container,
+  TitleProject,
+  ProjectDataContainer,
+  ProjectDataContainerInner,
+} from "./project-page-style"
+
 export default function ProjectPage({ data }) {
   const post = data.markdownRemark
   console.log(post)
   return (
     <Layout>
-      <div>
-        <small>project template</small>
-        <h1>{post.frontmatter.title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
-      </div>
+      <Container id="fixed-elements">
+        <TitleProject
+          data-scroll
+          data-scroll-sticky
+          data-scroll-target="#fixed-elements"
+        >
+          {post.frontmatter.title}
+        </TitleProject>
+        <ProjectDataContainer>
+          <ProjectDataContainerInner>
+            <div
+              className="text"
+              dangerouslySetInnerHTML={{ __html: post.html }}
+            />
+            <a href={post.frontmatter.link} target="_blank">
+              <img
+                src={post.frontmatter.image}
+                alt={post.frontmatter.title.toLowerCase()}
+              />
+            </a>
+          </ProjectDataContainerInner>
+        </ProjectDataContainer>
+      </Container>
     </Layout>
   )
 }
@@ -21,6 +46,8 @@ export const query = graphql`
       html
       frontmatter {
         title
+        image
+        link
       }
     }
   }

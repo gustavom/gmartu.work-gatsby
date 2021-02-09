@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 export const Container = styled.section`
   display: flex;
-  height: 100vh;
+  min-height: 110vh;
   padding: 7.5rem 4rem 1.6rem;
   /* padding: 4.5rem 1.6rem 1.6rem; */
   h1 {

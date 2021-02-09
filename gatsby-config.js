@@ -9,8 +9,7 @@ module.exports = {
   siteMetadata,
   plugins: [
     `gatsby-plugin-react-helmet`,
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+
     {
       resolve: `gatsby-source-filesystem`,
       options: { name: `images`, path: `${__dirname}/static/images` },
@@ -91,8 +90,10 @@ module.exports = {
         name: `labs`,
       },
     },
-    `gatsby-transformer-remark`,
     // ,
     // `gatsby-plugin-offline`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    `gatsby-transformer-remark`,
   ],
 }

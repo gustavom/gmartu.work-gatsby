@@ -1,5 +1,5 @@
 ---
-image: /images/project-3-que-importam.jpg
+image: ../images/project-3-que-importam.jpg
 title: PUC-SP - CAMPANHA 3% QUE IMPORTAM
 description: PUC-SP | CAMPANHA 3% QUE IMPORTAM
 introduction: PUC-SP | CAMPANHA 3% QUE IMPORTAM
