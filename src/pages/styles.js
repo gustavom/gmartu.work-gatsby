@@ -82,12 +82,14 @@ export const HomeContainer = styled.div`
     content: "Projetos";
     position: absolute;
     left: 50px;
-    bottom: -500px;
+    /* bottom: -500px; */
+    bottom: -150px;
     font-size: 7vw;
     font-weight: 700;
     white-space: nowrap;
     letter-spacing: -0.5vw;
-    transition: bottom 0.2s linear;
+    /* transition: bottom 0.2s linear; */
+    transition: bottom 0.5s linear;
     color: #fff;
   }
   &.is-inview {
