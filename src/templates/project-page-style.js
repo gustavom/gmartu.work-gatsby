@@ -49,7 +49,7 @@ export const ProjectDataContainerInner = styled.div`
     flex: 0 0 40%;
     padding: 50px 25px;
   }
-  a {
+  a.image {
     display: block;
     flex: 0 0 50%;
     max-width: 50%;

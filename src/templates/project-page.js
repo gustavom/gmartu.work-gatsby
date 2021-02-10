@@ -28,7 +28,7 @@ export default function ProjectPage({ data }) {
               className="text"
               dangerouslySetInnerHTML={{ __html: post.html }}
             />
-            <a href={post.frontmatter.link} target="_blank">
+            <a href={post.frontmatter.link} target="_blank" className="image">
               <img
                 src={post.frontmatter.image}
                 alt={post.frontmatter.title.toLowerCase()}
