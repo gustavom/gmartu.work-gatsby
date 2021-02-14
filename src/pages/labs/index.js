@@ -24,6 +24,7 @@ export const query = graphql`
   query {
     labs: allMarkdownRemark(
       filter: { frontmatter: { categories: { eq: "labs" } } }
+      sort: { fields: [frontmatter___order], order: ASC }
     ) {
       edges {
         node {

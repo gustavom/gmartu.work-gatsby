@@ -6,6 +6,7 @@ introduction: Front-end Mentor Challenge 02
 link: "https://frontendmentor-challenge-02.gmartu.work/"
 solution: "https://www.frontendmentor.io/solutions/html5-sass-css-grid-flex-box-and-npm-scripts-ZiApo2slb"
 twitter_text: Front-end Mentor Challenge 02
+order: 02
 tags:
   - challenge
   - front-end

@@ -6,6 +6,7 @@ introduction: Front-end Mentor Challenge 01
 link: "https://frontendmentor-challenge-01.gmartu.work/"
 solution: "https://www.frontendmentor.io/solutions/simple-solution-with-html-5-new-tags-and-css3-QfotRpoCi"
 twitter_text: Front-end Mentor Challenge 01
+order: 01
 tags:
   - challenge
   - front-end
